@@ -1,13 +1,7 @@
-import React from 'react'
+import { SignIn } from '@clerk/nextjs'
 
-import {Button} from "@/components/ui/button";
-
-const Page = () => {
-    return (
-        <div >
-            Sign-in with Google
-        </div>
-    )
+export default function Page() {
+    return <main className="flex items-center justify-center">
+        <SignIn />
+    </main>
 }
-
-export default Page
