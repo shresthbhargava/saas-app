@@ -1,9 +1,3 @@
-// type User = {
-//   name: string;
-//   email: string;
-//   image?: string;
-//   accountId: string;
-// };
 
 enum Subject {
   maths = "maths",
@@ -17,13 +11,17 @@ enum Subject {
   business = "business",
 }
 
-type Companion = Models.DocumentList<Models.Document> & {
-  $id: string;
+type Companion = {
+  id: string;
   name: string;
   subject: Subject;
   topic: string;
   duration: number;
-  bookmarked: boolean;
+  bookmarked?: boolean;
+  author?: string;
+  voice?: string;
+  style?: string;
+  created_at?: string;
 };
 
 interface CreateCompanion {
