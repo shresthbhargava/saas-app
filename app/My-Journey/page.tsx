@@ -17,6 +17,8 @@ const MyJourney = async () => {
         ])
 
         // @ts-ignore
+        // @ts-ignore
+        // @ts-ignore
         return (
             <div className="space-y-8">
                 <h1>My Learning Journey</h1>
