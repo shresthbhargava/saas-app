@@ -1,9 +1,15 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
+const isProtectedRoute = createRouteMatcher([
+  '/companions(.*)',
+  '/my-journey(.*)',
+  '/subscription(.*)',
+])
+
 export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) await auth.protect()
 })
-const isProtectedRoute = createRouteMatcher([
+
 export const config = {
   matcher: [
     // Skip Next.js internals and all static files, unless found in search params
@@ -12,7 +18,3 @@ export const config = {
     '/(api|trpc)(.*)',
   ],
 }
-  '/companions(.*)',
-  '/my-journey(.*)',
-  '/subscription(.*)',
-])

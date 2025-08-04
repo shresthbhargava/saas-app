@@ -47,13 +47,3 @@ const MyJourney = async () => {
 }
 
 export default MyJourney
-
-const profile = () => {
-    return (
-        <div>
-            profile
-        </div>
-    )
-}
-
-export default profile
