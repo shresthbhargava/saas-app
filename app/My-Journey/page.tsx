@@ -26,7 +26,16 @@ const MyJourney = async () => {
                 <div className="grid gap-8 lg:grid-cols-2">
                     <CompanionsList 
                         title="Recent Sessions" 
-                        companions={recentSessions}
+                        companions={Array.isArray(recentSessions) && recentSessions.length > 0 && !Array.isArray(recentSessions[0])
+                            ? recentSessions.map((session: any) => ({
+                                id: session.id,
+                                name: session.name,
+                                subject: session.subject,
+                                topic: session.topic,
+                                duration: session.duration
+                            }))
+                            : []
+                        }
                         classNames="lg:col-span-1"
                     />
                     
